@@ -20,8 +20,11 @@ Data        Training data should be placed here in order to use the QCTrain scri
 
 
 Requirenment:
-you need to install these packages:
-keras, tensorflow, dipy, cv2, PIL, Sklearn
+you need to install the packages listed in `requirements.txt`, maybe with:
+
+```
+pip install -r requirements.txt
+```
 
 How to run:
 QCTest --axial will do pre-processing and run the model on axial data, prints the accuracy,precision and recall and saves the output lables at the Results folder. The default is axial.

@@ -1,0 +1,6 @@
+keras
+tensorflow
+dipy
+opencv-python
+Pillow
+scikit-learn
