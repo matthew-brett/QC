@@ -1,17 +1,8 @@
 # import matplotlib.pyplot as plt
 import numpy as np
-import tensorflow as tf
 import keras
-from keras.preprocessing.image import load_img
-from keras.preprocessing.image import img_to_array
-from keras.applications.imagenet_utils import decode_predictions
-from random import shuffle
-from keras import layers
-from sklearn.cross_validation import KFold,StratifiedKFold
-import  sklearn.cross_validation
+import sklearn.model_selection
 from sklearn.metrics import confusion_matrix
-from sklearn.metrics import classification_report
-from keras.models import load_model
 import os
 import argparse
 
@@ -26,7 +17,7 @@ def get_args():
 
 
 
-train_dir = './Data/Axial/'
+train_dir = './Test-Data/Axial/'
 Res_dir='./Results/Axial/'
 
 #VGG-Axial
@@ -111,7 +102,7 @@ model.add(keras.layers.Dense(2, activation='softmax'))
 model.compile(optimizer=keras.optimizers.RMSprop(lr=2e-4),
               loss='binary_crossentropy',
               metrics=['acc'])
-kf = sklearn.cross_validation.KFold(np.shape(train_features)[0], n_folds=5, shuffle=True, random_state=100)
+kf = sklearn.model_selection.KFold(np.shape(train_features)[0], n_folds=5, shuffle=True, random_state=100)
 
 for inputs_batch, labels_batch in train_generator:
   

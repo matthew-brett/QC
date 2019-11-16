@@ -3,4 +3,4 @@ tensorflow
 dipy
 opencv-python
 Pillow
-scikit-learn
+sklearn
